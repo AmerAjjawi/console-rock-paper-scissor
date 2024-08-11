@@ -46,5 +46,8 @@ function getHumanChoice() {
 //call function
 getHumanChoice();
 
-//test the variable
-console.log(userChoice);
+//initalize computer score to 0
+let computerScore = 0;
+
+//initalize human score to 0
+let humanscore = 0;
