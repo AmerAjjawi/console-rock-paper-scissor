@@ -25,7 +25,7 @@ getComputerChoice();
 //set up a function to validate the human choice through a prompt
 function getHumanChoice() {
     //add a while loop & validiate user choice's that are in the array 
-    while (choice.includes(userChoice)) {
+    while (!choice.includes(userChoice)) {
         //prompt user choice 
         userChoice = prompt('please enter rock, paper, or scissor');
 
