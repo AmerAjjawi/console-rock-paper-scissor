@@ -7,6 +7,12 @@ const computerChoice = choice[Math.floor(Math.random() * choice.length)];
 //initalize human choice variable
 const userChoice = prompt('please enter rock, paper, or scissor');
 
+//initalize computer score to 0
+let computerScore = 0;
+
+//initalize human score to 0
+let humanscore = 0;
+
 //set up a function to randomly get the values of choice for the computer
 function getComputerChoice() {
     //needs to return the random choice from array
@@ -46,11 +52,7 @@ function getHumanChoice() {
 //call function
 getHumanChoice();
 
-//initalize computer score to 0
-let computerScore = 0;
 
-//initalize human score to 0
-let humanscore = 0;
 
 //set up a function that gets the computer and human choice as parameters and play one round
 function playRound(computerChoice, userChoice) {
