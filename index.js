@@ -1,18 +1,18 @@
 //set up a choice for rock, paper, scissor
-let choice = ['rock', 'paper', 'scissor'];
+const choice = ['rock', 'paper', 'scissor'];
 
 //initalize computer choice variable
-let computerChoice;
+const computerChoice = choice[Math.floor(Math.random() * choice.length)];
 
 //initalize human choice variable
-let userChoice;
+const userChoice = prompt('please enter rock, paper, or scissor');
 
 //set up a function to randomly get the values of choice for the computer
 function getComputerChoice() {
     //needs to return the random choice from array
 
     //assign the choice to computerChoice with math random
-    computerChoice = choice[Math.floor(Math.random() * choice.length)];
+    //computerChoice = choice[Math.floor(Math.random() * choice.length)];
 
     //return the computer Choice
 
@@ -27,7 +27,7 @@ function getHumanChoice() {
     //add a while loop & validiate user choice's that are in the array 
     while (!choice.includes(userChoice)) {
         //prompt user choice 
-        userChoice = prompt('please enter rock, paper, or scissor');
+       // userChoice = prompt('please enter rock, paper, or scissor');
 
         //conditionals to see if the 
         if (choice.includes(userChoice)){
@@ -51,3 +51,25 @@ let computerScore = 0;
 
 //initalize human score to 0
 let humanscore = 0;
+
+//set up a function that gets the computer and human choice as parameters and play one round
+function playRound(computerChoice, userChoice) {
+    //rock beats scissor
+    if (userChoice === 'rock' && computerChoice === 'scissor') {
+        humanscore ++; 
+        return `Human won! Human chose ${userChoice}, the new score is ${humanscore}`
+    }
+}
+
+//placing human function in new variable
+const humanSelection = getHumanChoice();
+
+//placing computer function in new variable
+const computerSelection = getComputerChoice();
+
+//call function
+playRound(computerSelection, humanSelection);
+
+
+//test
+console.log(userChoice);
