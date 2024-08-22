@@ -2,23 +2,23 @@
 const choice = ['rock', 'paper', 'scissor'];
 
 //initalize computer choice variable
-const computerChoice = choice[Math.floor(Math.random() * choice.length)];
+let computerChoice;
 
 //initalize human choice variable
-const userChoice = prompt('please enter rock, paper, or scissor');
+let userChoice;
 
 //initalize computer score to 0
 let computerScore = 0;
 
 //initalize human score to 0
-let humanscore = 0;
+let humanScore = 0;
 
 //set up a function to randomly get the values of choice for the computer
 function getComputerChoice() {
     //needs to return the random choice from array
 
     //assign the choice to computerChoice with math random
-    //computerChoice = choice[Math.floor(Math.random() * choice.length)];
+    computerChoice = choice[Math.floor(Math.random() * choice.length)];
 
     //return the computer Choice
 
@@ -33,7 +33,7 @@ function getHumanChoice() {
     //add a while loop & validiate user choice's that are in the array 
     while (!choice.includes(userChoice)) {
         //prompt user choice 
-       // userChoice = prompt('please enter rock, paper, or scissor');
+        userChoice = prompt('please enter rock, paper, or scissor');
 
         //conditionals to see if the 
         if (choice.includes(userChoice)){
@@ -55,11 +55,14 @@ getHumanChoice();
 
 
 //set up a function that gets the computer and human choice as parameters and play one round
-function playRound(computerChoice, userChoice) {
+function playRound(human, computer) {
     //rock beats scissor
-    if (userChoice === 'rock' && computerChoice === 'scissor') {
-        humanscore ++; 
-        return `Human won! Human chose ${userChoice}, the new score is ${humanscore}`
+    if (human === 'rock' && computer === 'scissor') {
+        humanscore++; 
+        return `Human won! Human chose ${human}, the new score is ${humanScore}`
+    } else if (human === 'scissor' && computer === 'rock') {
+        computerScore++;
+        return `Computer won! Computer chose ${computer}, new score is ${computerScore}`
     }
 }
 
@@ -74,4 +77,4 @@ playRound(computerSelection, humanSelection);
 
 
 //test
-console.log(userChoice);
+console.log(human, computer);
