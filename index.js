@@ -25,8 +25,8 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-//call the function 
-getComputerChoice();
+
+
 
 //set up a function to validate the human choice through a prompt
 function getHumanChoice() {
@@ -48,10 +48,6 @@ function getHumanChoice() {
 
     }
 }
-
-//call function
-getHumanChoice();
-
 
 
 //set up a function that gets the computer and human choice as parameters and play one round
@@ -76,5 +72,3 @@ const computerSelection = getComputerChoice();
 playRound(computerSelection, humanSelection);
 
 
-//test
-console.log(human, computer);
