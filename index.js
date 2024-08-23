@@ -50,25 +50,26 @@ function getHumanChoice() {
 }
 
 
+
 //set up a function that gets the computer and human choice as parameters and play one round
-function playRound(human, computer) {
+//function playRound(human, computer) {
     //rock beats scissor
-    if (human === 'rock' && computer === 'scissor') {
-        humanscore++; 
-        return `Human won! Human chose ${human}, the new score is ${humanScore}`
-    } else if (human === 'scissor' && computer === 'rock') {
-        computerScore++;
-        return `Computer won! Computer chose ${computer}, new score is ${computerScore}`
-    }
-}
+  //  if (human === 'rock' && computer === 'scissor') {
+    //    humanscore++; 
+        //return `Human won! Human chose ${human}, the new score is ${humanScore}`
+    //} else if (human === 'scissor' && computer === 'rock') {
+      //  computerScore++;
+        //return `Computer won! Computer chose ${computer}, new score is ${computerScore}`
+    //}
+//}
 
 //placing human function in new variable
-const humanSelection = getHumanChoice();
+//const humanSelection = getHumanChoice();
 
 //placing computer function in new variable
-const computerSelection = getComputerChoice();
+//const computerSelection = getComputerChoice();
 
 //call function
-playRound(computerSelection, humanSelection);
+//playRound(computerSelection, humanSelection);
 
 
