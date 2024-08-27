@@ -112,5 +112,22 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 //call function
-console.log(playRound(computerSelection, humanSelection));
+//console.log(playRound(computerSelection, humanSelection));
 
+//function to play five rounds
+
+function fiveRoundsGame () {
+    //use a for loop
+    for (let i = 0; i < 5; i++) {
+     //call function inside
+     playRound(humanSelection, computerSelection);
+    } 
+
+    //if (userChoice[humanScore] > computerChoice[computerScore]) {
+      //return `human won the match` + humanScore;
+    //} else {
+      //  return `human lost the match`;
+   // }
+}
+
+console.log(fiveRoundsGame());
