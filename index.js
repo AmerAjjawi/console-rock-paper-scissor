@@ -36,12 +36,12 @@ function getHumanChoice() {
         userChoice = prompt('please enter rock, paper, or scissor');
 
         //conditionals to see if the 
-        if (choice.includes(userChoice)){
+        if (choice.includes(userChoice)) {
 
             //return enter either rock, paper, or scissors
-            return `Your choice was ${userChoice}`;
+            return userChoice;
         } else {
-            
+
             //return the user's choice
             return `please enter the correct values`;
         }
@@ -52,24 +52,65 @@ function getHumanChoice() {
 
 
 //set up a function that gets the computer and human choice as parameters and play one round
-//function playRound(human, computer) {
-    //rock beats scissor
-  //  if (human === 'rock' && computer === 'scissor') {
-    //    humanscore++; 
-        //return `Human won! Human chose ${human}, the new score is ${humanScore}`
-    //} else if (human === 'scissor' && computer === 'rock') {
-      //  computerScore++;
-        //return `Computer won! Computer chose ${computer}, new score is ${computerScore}`
-    //}
-//}
+function playRound(human, computer) {
+    // check for a tie
+    if (human === computer) {
+        result = `It's a tie`
+        return result;
+    }
+
+    //check for rock
+    if (human === "rock") {
+        if (computer === "paper") {
+            computerScore++;
+            result = `computer won!`;
+            return result;
+        } else if (computer === 'scissor') {
+            humanScore++;
+            result = `human won!`;
+            return result;
+        }
+    }
+    //check for paper
+    if (human === "paper") {
+        if (computer === "rock") {
+            humanScore++;
+            result = `human won !`;
+            return result;
+        } else if (computer === "scissor") {
+            computerScore++;
+            result = `computer won! `;
+            return result;
+
+        }
+    }
+    // check for scissor
+    if (human === "scissor") {
+        if (computer === "paper") {
+            humanScore++;
+            result = `human won!`;
+            return result;
+        } else if (computer === "rock") {
+            computer++;
+            result = `computer won!`;
+            return result;
+        }
+    }
+
+    //error message
+    else {
+        error_msg = `Please enter: rock, paper, or scissor`;
+        return error_msg;
+    }
+
+}
 
 //placing human function in new variable
-//const humanSelection = getHumanChoice();
+const humanSelection = getHumanChoice();
 
 //placing computer function in new variable
-//const computerSelection = getComputerChoice();
+const computerSelection = getComputerChoice();
 
 //call function
-//playRound(computerSelection, humanSelection);
-
+console.log(playRound(computerSelection, humanSelection));
 
