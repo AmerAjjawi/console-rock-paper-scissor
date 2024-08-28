@@ -13,6 +13,9 @@ let computerScore = 0;
 //initalize human score to 0
 let humanScore = 0;
 
+//initalize result variable
+let result;
+
 //set up a function to randomly get the values of choice for the computer
 function getComputerChoice() {
     //needs to return the random choice from array
@@ -97,11 +100,7 @@ function playRound(human, computer) {
         }
     }
 
-    //error message
-    else {
-        error_msg = `Please enter: rock, paper, or scissor`;
-        return error_msg;
-    }
+
 
 }
 
@@ -111,8 +110,7 @@ const humanSelection = getHumanChoice();
 //placing computer function in new variable
 const computerSelection = getComputerChoice();
 
-//call function
-//console.log(playRound(computerSelection, humanSelection));
+
 
 //function to play five rounds
 
@@ -130,4 +128,4 @@ function fiveRoundsGame () {
    // }
 }
 
-console.log(fiveRoundsGame());
+fiveRoundsGame();
