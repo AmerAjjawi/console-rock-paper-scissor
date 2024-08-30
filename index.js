@@ -105,13 +105,13 @@ function fiveRoundsGame() {
   for (let i = 0; i < 5; i++) {
     //call function inside
     playRound(humanSelection, computerSelection);
-  }
 
+    //if else statement
+  }
   if (humanScore > computerScore) {
     return "Human won this round";
   } else {
-    return "Better luck next time";
+    return "Better luck next time!";
   }
 }
-
-fiveRoundsGame();
+console.log(fiveRoundsGame());
