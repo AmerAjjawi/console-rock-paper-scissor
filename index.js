@@ -1,5 +1,5 @@
 //set up a choice for rock, paper, scissor
-const choice = ["rock", "paper", "scissor"];
+const choices = ["rock", "paper", "scissors"];
 
 //initalize computer choice variable
 let computerChoice;
@@ -16,12 +16,15 @@ let humanScore = 0;
 //initalize result variable
 let result;
 
+//initalize winner
+let winner;
+
 //set up a function to randomly get the values of choice for the computer
 function getComputerChoice() {
   //needs to return the random choice from array
 
   //assign the choice to computerChoice with math random
-  computerChoice = choice[Math.floor(Math.random() * choice.length)];
+  computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
   //return the computer Choice
 
@@ -33,15 +36,13 @@ function getHumanChoice() {
   //add a while loop & validiate user choice's that are in the array
   while (!choice.includes(userChoice)) {
     //prompt user choice
-    userChoice = prompt("please enter rock, paper, or scissor");
+    userChoice = prompt("please enter rock, paper, or scissors");
 
-    //conditionals to see if the
-    if (choice.includes(userChoice)) {
-      //return enter either rock, paper, or scissors
+    userChoice = userChoice.toLowerCase();
+    if (choices.includes(userChoice)) {
       return userChoice;
     } else {
-      //return the user's choice
-      return `please enter the correct values`;
+      return "Please enter a value to play ";
     }
   }
 }
@@ -57,36 +58,36 @@ function playRound(human, computer) {
   //check for rock
   if (human === "rock") {
     if (computer === "paper") {
-      computerScore++;
-      result = `computer won!`;
+      //computerScore++;
+      result = `You lose! Paper beats Rocks`;
       return result;
-    } else if (computer === "scissor") {
-      humanScore++;
-      result = `human won!`;
+    } else if (computer === "scissors") {
+      //humanScore++;
+      result = `You win! Rock beats Scissors`;
       return result;
     }
   }
   //check for paper
   if (human === "paper") {
     if (computer === "rock") {
-      humanScore++;
-      result = `human won !`;
+      //humanScore++;
+      result = `You win! Paper beats Rock`;
       return result;
     } else if (computer === "scissor") {
-      computerScore++;
-      result = `computer won! `;
+      // computerScore++;
+      result = `You lose! Scissors beats Rock `;
       return result;
     }
   }
   // check for scissor
   if (human === "scissor") {
     if (computer === "paper") {
-      humanScore++;
-      result = `human won!`;
+      //humanScore++;
+      result = `You win! Scissors beats Paper `;
       return result;
     } else if (computer === "rock") {
-      computer++;
-      result = `computer won!`;
+      //computer++;
+      result = `You lose! Rock beats Scissors`;
       return result;
     }
   }
@@ -104,9 +105,18 @@ function fiveRoundsGame() {
   //use a for loop
   for (let i = 0; i < 5; i++) {
     //call function inside
-    playRound(humanSelection, computerSelection);
-
-    //if else statement
+    winner = playRound(humanSelection, computerSelection) * 3;
+    if (winner.includes("win")) {
+      player++;
+      console.log(
+        `Human Score: ${humanScore} | Computer Score: ${computerScore}  `
+      );
+    } else if (winner.includes("lose")) {
+      computerScore++;
+      console.log(
+        `Human Score ${humanScore} | Computer Score ${computerScore} `
+      );
+    }
   }
   if (humanScore > computerScore) {
     return "Human won this round";
@@ -114,4 +124,4 @@ function fiveRoundsGame() {
     return "Better luck next time!";
   }
 }
-console.log(fiveRoundsGame());
+fiveRoundsGame();
