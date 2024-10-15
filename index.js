@@ -30,10 +30,11 @@ function getComputerChoice() {
 
 //set up a function to validate the human choice through a prompt
 function getHumanChoice() {
+  let userPrompt;
   //add a while loop & validiate user choice's that are in the array
   while (!choices.includes(userChoice)) {
     //prompt user choice
-    let userPrompt = prompt("please enter rock, paper, or scissors");
+   userPrompt = prompt("please enter rock, paper, or scissors");
 
     //userChoice = userChoice.toLowerCase();
   }
@@ -42,6 +43,7 @@ function getHumanChoice() {
 
 //set up a function that gets the computer and human choice as parameters and play one round
 function playRound(human, computer) {
+  console.log(human, computer);
   // check for a tie
   if (human === computer) {
     result = `It's a tie`;
